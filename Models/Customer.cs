@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace sakila.Models
 {
@@ -13,8 +14,11 @@ namespace sakila.Models
 
         public int CustomerId { get; set; }
         public int StoreId { get; set; }
+        [RegularExpression(@"^[A-Z]+[a-z]*")]
         public string FirstName { get; set; }
+        [RegularExpression(@"^[A-Z]+[a-z]*")] 
         public string LastName { get; set; }
+        [EmailAddress]
         public string Email { get; set; }
         public int AddressId { get; set; }
         public string Active { get; set; }
